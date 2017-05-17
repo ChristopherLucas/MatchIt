@@ -79,8 +79,13 @@ matchit <- function(formula, data, method = "nearest", distance = "logit",
   } else {is.full.mahalanobis <- FALSE}
 
   ## matching!
-  out2 <- do.call(fn2, list(treat, X, data, distance=distance, discarded,
-                            is.full.mahalanobis=is.full.mahalanobis, ...)) 
+  if(method == "MahalFrontier" | method == "L1Frontier"){
+    out2 <- do.call(fn2, list(as.character(formula[[2]]), X, data))
+    return(out2)
+  } else {
+    out2 <- do.call(fn2, list(treat, X, data, distance=distance, discarded,
+                              is.full.mahalanobis=is.full.mahalanobis, ...))
+  }
 
   ## no distance for full mahalanobis matching
   if(fn1=="distance2mahalanobis"){
@@ -97,8 +102,8 @@ matchit <- function(formula, data, method = "nearest", distance = "logit",
     out2$X <- X
   }
   out2$distance <- distance
-  out2$discarded <- discarded
-
+  out2$discarded <- discarded  
+    
   ## basic summary
   nn <- matrix(0, ncol=2, nrow=4)
   nn[1,] <- c(sum(out2$treat==0), sum(out2$treat==1))

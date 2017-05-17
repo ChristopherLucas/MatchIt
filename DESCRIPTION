@@ -1,5 +1,5 @@
 Package: MatchIt
-Version: 3.0.1
+Version: 3.0.2
 Date: 2017-04-18
 Title: Nonparametric Preprocessing for Parametric Casual Inference
 Description: Selects matched samples of the original treated and
@@ -30,10 +30,11 @@ Suggests:
     mgcv,
     WhatIf,
     R.rsp,
-    testthat
+    testthat,
+    MatchingFrontier
 VignetteBuilder: R.rsp
 LazyLoad: yes
 LazyData: yes
 License: GPL (>=2)
 URL: http://gking.harvard.edu/matchit
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
