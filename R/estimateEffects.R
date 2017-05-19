@@ -73,13 +73,13 @@ estimateEffects <-
         
         effect.estimates <- MatchingFrontier::estimateEffects(frontierObject,
                                                               myForm,
-                                                              prop.estimated = 1,
-                                                              mod.dependence.formula = NULL,
-                                                              continuous.vars = NA,
-                                                              seed = 1,
-                                                              model.dependence.ests = 100,
-                                                              means.as.cutpoints = TRUE,
-                                                              alpha=0.95)
+                                                              prop.estimated = propEstimated,
+                                                              mod.dependence.formula = modDependenceFormula,
+                                                              continuous.vars = continuousVars,
+                                                              seed = seed,
+                                                              model.dependence.ests = modelDependenceEsts,
+                                                              means.as.cutpoints = meansAsCutpoints,
+                                                              alpha=alpha)
         class(effect.estimates) <- "frontierEstimates"
         return(effect.estimates)
     }
