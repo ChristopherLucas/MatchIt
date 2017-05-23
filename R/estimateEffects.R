@@ -71,8 +71,8 @@ estimateEffects <-
         if (!requireNamespace("MatchingFrontier", quietly = TRUE))
             stop("MatchingFrontier package is required. Please install it.")
         
-        effect.estimates <- MatchingFrontier::estimateEffects(frontierObject,
-                                                              myForm,
+        effect.estimates <- MatchingFrontier::estimateEffects(frontier.object = frontierObject,
+                                                              my.form = myForm,
                                                               prop.estimated = propEstimated,
                                                               mod.dependence.formula = modDependenceFormula,
                                                               continuous.vars = continuousVars,
