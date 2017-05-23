@@ -59,9 +59,11 @@ represents the square term of \code{x1}. See \code{help(formula)}
   \item{method}{This argument specifies a matching method. Currently,
     \code{"exact"} (exact matching), \code{"full"} (full matching),
     \code{"genetic"} (genetic matching), \code{"nearest"} (nearest
-    neighbor matching), \code{"optimal"} (optimal matching), and
-    \code{"subclass"} (subclassification) are available. The default is
-    \code{"nearest"}. Note that within each of these matching methods,
+    neighbor matching), \code{"optimal"} (optimal matching),
+    \code{"subclass"} (subclassification), \code{"L1Frontier"} (the L1
+  matching frontier), and \code{"MahalFrontier"} (the Mahalanobis
+  matching frontier) are available. The default is \code{"nearest"}.
+  Note that within each of these matching methods,
     \emph{MatchIt} offers a variety of options.}
   \item{distance}{This argument specifies the method used to estimate the
     distance measure. The default is logistic regression,
@@ -73,7 +75,8 @@ represents the square term of \code{x1}. See \code{help(formula)}
     fall outside some measure of support of the distance score before
     matching, and not allow them to be used at all in the matching
     procedure.  Note that discarding units may change the quantity of
-    interest being estimated.  The options are: \code{"none"} (default), which discards no units before matching,
+    interest being estimated.  The options are: \code{"none"} (default),
+    which discards no units before matching,
     \code{"both"}, which discards all units (treated and control) that are
       outside the support of the distance measure,
     \code{"control"}, which discards only control units outside the
